@@ -3,30 +3,29 @@ import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Nav = styled.nav`
-  background: linear-gradient(90deg, black 9%, rgba(73,63, 252, 1) 100%);
+  background: linear-gradient(90deg, black 9%, rgba(73, 63, 252, 1) 100%);
   height: 95px;
   display: flex;
   justify-content: space-between;
   padding: 0.1rem calc((10vw - 100px) / 2);
   z-index: 10;
-  color:#fff;
+  color: #fff;
   /* Third Nav */
   /* justify-content: flex-start; */
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 374px) {
     display: none;
   }
 `;
 
 export const NavForm = styled.nav`
-  
   display: flex;
- 
+
   /* Third Nav */
   /* justify-content: flex-start; */
 `;
 export const NavLink = styled(Link)`
   color: #fff;
-  
+
   font-size: 19px;
   display: flex;
   text-decoration: none;
@@ -40,7 +39,7 @@ export const NavLink = styled(Link)`
     text-decoration: none;
   }
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 374px) {
     display: block;
     position: absolute;
     top: 0;
@@ -102,7 +101,6 @@ export const NavBtn = styled.nav`
   @media screen and (max-width: 768px) {
     display: none;
   }
-  
 `;
 
 export const NavBtnLink = styled(Link)`
