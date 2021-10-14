@@ -1,5 +1,5 @@
 import React from "react";
-inport {ReactComponent as Logo} frpm 
+import {ReactComponent as Logo} frpm 
 const Header =()=>{
     return (
         
