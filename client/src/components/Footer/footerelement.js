@@ -5,9 +5,16 @@ export const Footing = styled.div`
   height: 85px;
   display: flex;
   align-item: end;
+  position: fixed;
+            padding: 10px 10px 0px 10px;
+            bottom: 0;
+            width: 100%;
+            /* Height of the footer*/ 
+            
+            
   
   justify-content: center;
-  padding: 0.1rem calc((10vw - 100px) / 2);
+
   z-index: 10;
   color:#fff;
   
@@ -30,7 +37,7 @@ export const Footing = styled.div`
   @media screen and (max-width: 375px) {
     display: block;
     justify-content: center;
-    height: 150px;
+    width: 100%;
     
   }
 `;
