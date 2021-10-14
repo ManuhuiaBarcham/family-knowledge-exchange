@@ -13,22 +13,12 @@ const Navbars = () => {
                 
                 <Bars />
                 <NavMenu>
-                    <NavLink to="/about" activeStyle>
-                        About
+                    <NavLink to="/" activeStyle>
+                        Home
                     </NavLink>
-                    <NavLink to="/services" activeStyle>
-                        Services
-                    </NavLink>
-                    <NavLink to="/contact-us" activeStyle>
+                    <NavLink to="/contact" activeStyle>
                         Contact Us
                     </NavLink>
-
-                    <NavLink to="/sign-up" activeStyle>
-                        Join Us
-                    </NavLink>
-
-                   
-                </NavMenu>
                 <NavBtn>
                    {Auth.loggedIn() ? (
             <>
@@ -41,15 +31,16 @@ const Navbars = () => {
             </>
           ) : (
             <>
-              <Link className="btn btn-lg btn-info m-2" to="/login">
+              <NavLink  to="/login">
                 Login
-              </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
+              </NavLink>
+              <NavLink  to="/signup">
                 Signup
-              </Link>
+              </NavLink>
             </>
           )}
                 </NavBtn>
+                </NavMenu>
             </Nav>
         </>
     );

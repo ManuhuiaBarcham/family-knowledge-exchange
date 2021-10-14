@@ -48,11 +48,11 @@ function App() {
        
           <Header />
           <Navbars/>
-            <Route  path="/contactus" exact component={Contact}>
+            <Route  path="/" exact component={Home}>
               <Home />
             </Route>
-            <Route exact path="/">
-              <Home />
+            <Route exact path="/contact">
+              <Contact />
             </Route>
             <Route exact path="/login">
               <Login />
