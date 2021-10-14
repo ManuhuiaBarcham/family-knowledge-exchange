@@ -2,8 +2,8 @@
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Heading = styled.div`
-  background: linear-gradient(90deg, black 9%, rgba(73,63, 252, 1) 100%);
+export const Headers = styled.div`
+  background: linear-gradient(90deg, #25424c 13%, #FB770D 100%);
   height: 85px;
   display: flex;
   align-item: end;

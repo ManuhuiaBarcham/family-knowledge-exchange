@@ -1,9 +1,7 @@
-
-
 import styled from 'styled-components';
 
 export const Footing = styled.div`
-  background: linear-gradient(90deg, black 9%, rgba(73,63, 252, 1) 100%);
+  background: linear-gradient(90deg, #FB770D 5%, #25424c 100%);
   height: 85px;
   display: flex;
   align-item: end;

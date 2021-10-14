@@ -14,8 +14,9 @@ import Login from './pages/Login';
 import SingleThought from './pages/SingleThought';
 import Profile from './pages/Profile';
 import Header from './components/Header';
-import Footer from './components/Footer';
-
+import Navbars from './components/Navbar';
+import Footing from './components/Footer';
+import Contact from './pages/Contactus';
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -44,9 +45,12 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+       
           <Header />
-          <div className="container">
+          <Navbars/>
+            <Route  path="/contactus" exact component={Contact}>
+              <Home />
+            </Route>
             <Route exact path="/">
               <Home />
             </Route>
@@ -65,9 +69,9 @@ function App() {
             <Route exact path="/thoughts/:thoughtId">
               <SingleThought />
             </Route>
-          </div>
-          <Footer />
-        </div>
+          
+          <Footing />
+       
       </Router>
     </ApolloProvider>
   );

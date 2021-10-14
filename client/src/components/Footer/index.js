@@ -1,12 +1,12 @@
 import React from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
-
+import {Footing} from "./footerelement.js"
 const Footer = () => {
   const location = useLocation();
   const history = useHistory();
   return (
-    <footer className="w-100 mt-auto bg-secondary p-4">
-      <div className="container text-center mb-5">
+    <footer>
+      
         {location.pathname !== '/' && (
           <button
             className="btn btn-dark mb-3"
@@ -15,19 +15,11 @@ const Footer = () => {
             &larr; Go Back
           </button>
         )}
-        <h4>
-          Made with{' '}
-          <span
-            className="emoji"
-            role="img"
-            aria-label="heart"
-            aria-hidden="false"
-          >
-            ❤️
-          </span>{' '}
-          by the Tech Thoughts team.
-        </h4>
-      </div>
+        <Footing >
+                            <p >Copyright © 2021  State of Washington  All rights reserved. </p>
+                            <p >Policies  Privacy Policy  Feedback Survey </p>
+                        </Footing>
+     
     </footer>
   );
 };
