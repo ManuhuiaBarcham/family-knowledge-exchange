@@ -19,10 +19,24 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  thoughts: [
+  organization: {
+    type: String,
+    required: true,
+  },
+  location: {
+    type: String,
+    required: true,
+  },
+  profession: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Thought',
+      ref: 'Profession',
+    },
+  ],
+  interest: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Interest',
     },
   ],
 });
