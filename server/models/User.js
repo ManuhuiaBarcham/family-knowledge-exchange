@@ -27,13 +27,13 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  profession: [
+  professions: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Profession',
     },
   ],
-  interest: [
+  interests: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Interest',
