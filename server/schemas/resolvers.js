@@ -1,20 +1,22 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Interest, Profession } = require('../models');
-const ObjectId = (require('mongoose').Types.ObjectId);
+const ObjectId = require('mongoose').Types.ObjectId;
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-
     users: async (parent, { filter }) => {
-      console.log("parant:",filter.parent);
-      console.log("interest:",filter.interest);
-      console.log("username:",filter.username);
-      console.log("profession:",filter.profession);
-      console.log("filter:", filter);
-      const params = filter.username || filter.interest || filter.profession ? filter : {};
+      console.log('parent:', filter.parent);
+      console.log('interest:', filter.interest);
+      console.log('username:', filter.username);
+      console.log('profession:', filter.profession);
+      console.log('filter:', filter);
+      const params =
+        filter.username || filter.interest || filter.profession ? filter : {};
       // const params = username? { username } : {};
-      let tmp = await User.find(filter).populate('interest').populate('profession');
+      let tmp = await User.find(filter)
+        .populate('interest')
+        .populate('profession');
       return tmp;
     },
     interests: async () => {
@@ -22,8 +24,7 @@ const resolvers = {
     },
     professions: async () => {
       return await Profession.find({});
-    }
-  
+    },
   },
 
   Mutation: {

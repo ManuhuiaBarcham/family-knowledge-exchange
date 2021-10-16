@@ -4,8 +4,8 @@ const { Schema, model } = require('mongoose');
 const professionSchema = new Schema({
   professionOption: {
     type: String,
-    required: true,
-  }
+    // required: true,
+  },
 });
 
 const Profession = model('Profession', professionSchema);

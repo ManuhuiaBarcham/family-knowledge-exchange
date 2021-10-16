@@ -4,7 +4,7 @@ const { Schema, model } = require('mongoose');
 const interestSchema = new Schema({
   interestOption: {
     type: String,
-    required: true,
+    // required: true,
   },
 
   // thoughtAuthor: {
