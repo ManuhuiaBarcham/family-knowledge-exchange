@@ -1,16 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import {Nav} from "./navbarelements"
 
-import {NavLink} from "./navbarelements"
+import { Nav } from "./elements"
+
+import { NavLink } from "./elements"
 
 const Header = () => {
-  
+
   return (
     <Nav >
-      <NavLink to="/">
-                    <h1 >Family Knowledge Exchange</h1>
-                </NavLink>
+      <NavLink to="/" styled={{marginTop:"-10px"}}>
+        <h1 >Family Knowledge Exchange</h1>
+      </NavLink>
     </Nav>
   );
 };

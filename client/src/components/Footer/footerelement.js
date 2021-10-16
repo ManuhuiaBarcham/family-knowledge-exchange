@@ -30,14 +30,9 @@ export const Footing = styled.div`
     display: block;
     display: center;
     justify-content: center;
-    height: 94px;
+    height: 65px;
     padding-left:60px;
     padding-bottom:5px;
   }
-  @media screen and (max-width: 375px) {
-    display: block;
-    justify-content: center;
-    width: 100%;
-    
-  }
+  
 `;
