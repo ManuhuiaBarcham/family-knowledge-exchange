@@ -1,6 +1,5 @@
 const { gql } = require('apollo-server-express');
 
-
 const typeDefs = gql`
   # input data which will be used in queries
   input ProfessionInput {
@@ -10,7 +9,7 @@ const typeDefs = gql`
   input InterestInput {
     _id: ID!
     interestOption: String
-  }  
+  }
   input userFilter {
     # we use it like that not to cast on the server side
     interest: ID
@@ -47,20 +46,18 @@ const typeDefs = gql`
   }
   type Mutation {
     addUser(
-      _id: ID
-      username: String!
+      username: String
       email: String!
       password: String!
-      organization: String!
-      location: String!
-      profession: String!
-      interest: String!
+      organization: String
+      location: String
+      profession: [ID]
+      interest: [ID]
     ): Auth
     login(email: String!, password: String!): Auth
     changeInterest(interestOption: String!): Interest
     removeUser(userId: ID): User
   }
-
 `;
 
 module.exports = typeDefs;
