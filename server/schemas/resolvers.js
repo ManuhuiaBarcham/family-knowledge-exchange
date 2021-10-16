@@ -33,7 +33,7 @@ const resolvers = {
     //TODO: needs to fix this area. doesn't work with population
     //  return await User.find({}).populate('interests').populate('professions');
     users: async () => {
-      let tmp = await User.find({}).populate('interests').populate('professions');
+      let tmp = await User.find({}).populate('interest').populate('profession');
       console.log(tmp);
       for (const usr of tmp) {
         console.log("inside horray!");

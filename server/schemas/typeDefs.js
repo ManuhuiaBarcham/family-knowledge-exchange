@@ -8,8 +8,8 @@ const typeDefs = gql`
     password: String!
     organization: String!
     location: String!
-    professions: [Profession]
-    interests: [Interest]
+    profession: Profession!
+    interest: Interest!
   }
   type Interest {
     _id: ID

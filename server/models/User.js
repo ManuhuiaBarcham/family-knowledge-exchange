@@ -27,18 +27,16 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  professions: [
+  profession:
     {
       type: Schema.Types.ObjectId,
       ref: 'Profession',
     },
-  ],
-  interests: [
+  interest: 
     {
       type: Schema.Types.ObjectId,
       ref: 'Interest',
-    },
-  ],
+    }
 });
 
 userSchema.pre('save', async function (next) {
