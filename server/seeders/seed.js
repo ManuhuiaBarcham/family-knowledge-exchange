@@ -19,8 +19,8 @@ db.once('open', async () => {
     //create user
     for (let i = 0; i < userSeeds.length; i++) {
       let user = Object.assign({}, userSeeds[i]);
-      let userProf = await Profession.findOne({ professionOption: user.professions });
-      let userInter = await Interest.findOne({ interestOption: user.interests });
+      let userProf = await Profession.findOne({ professionOption: user.profession });
+      let userInter = await Interest.findOne({ interestOption: user.interest });
       user.profession = userProf._id;
       user.interest = userInter._id;
       await User.create(user);

@@ -1,45 +1,20 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Interest, Profession } = require('../models');
+const ObjectId = (require('mongoose').Types.ObjectId);
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    // users: async () => {
-    //   return User.find().populate('thoughts');
-    // },
-    // user: async (parent, { username }) => {
-    //   return User.findOne({ username }).populate('thoughts');
-    // },
 
-    // interests: async (parent, { username }) => {
-    //   const params = username ? { username } : {};
-    //   return Interest.find(params).populate('interests');
-    // },
-
-    // thoughts: async (parent, { username }) => {
-    //   const params = username ? { username } : {};
-    //   return Thought.find(params).sort({ createdAt: -1 });
-    // },
-    // thought: async (parent, { thoughtId }) => {
-    //   return Thought.findOne({ _id: thoughtId });
-    // },
-    // me: async (parent, args, context) => {
-    //   if (context.user) {
-    //     return User.findOne({ _id: context.user._id }).populate('thoughts');
-    //   }
-    //   throw new AuthenticationError('You need to be logged in!');
-    // },
-
-    //TODO: needs to fix this area. doesn't work with population
-    //  return await User.find({}).populate('interests').populate('professions');
-    users: async () => {
-      let tmp = await User.find({}).populate('interest').populate('profession');
-      console.log(tmp);
-      for (const usr of tmp) {
-        console.log("inside horray!");
-        console.log(`${usr.username} professon:`,usr.profession);
-        console.log(`${usr.username} interest:`,usr.interest);
-      }
+    users: async (parent, { filter }) => {
+      console.log("parant:",filter.parent);
+      console.log("interest:",filter.interest);
+      console.log("username:",filter.username);
+      console.log("profession:",filter.profession);
+      console.log("filter:", filter);
+      const params = filter.username || filter.interest || filter.profession ? filter : {};
+      // const params = username? { username } : {};
+      let tmp = await User.find(filter).populate('interest').populate('profession');
       return tmp;
     },
     interests: async () => {

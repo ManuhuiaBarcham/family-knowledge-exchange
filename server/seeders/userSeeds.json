@@ -5,8 +5,8 @@
     "password": "password01",
     "organization": "Big Law Firm",
     "location": "Seattle",
-    "professions": "Lawyer",
-    "interests": "Family Policy"
+    "profession": "Lawyer",
+    "interest": "Family Policy"
   },
   {
     "username": "Max Kanat-Alexander",
@@ -14,8 +14,8 @@
     "password": "password02",
     "organization": "Small Law Firm",
     "location": "Bellevue",
-    "professions": "Lawyer",
-    "interests": "Family Law"
+    "profession": "Lawyer",
+    "interest": "Family Law"
   },
   {
     "username": "Why The Lucky Stiff",
@@ -23,8 +23,8 @@
     "password": "password03",
     "organization": "State Government",
     "location": "Olympia",
-    "professions": "Social Worker",
-    "interests": "Family Policy"
+    "profession": "Social Worker",
+    "interest": "Family Policy"
   },
   {
     "username": "Kent Beck",
@@ -32,8 +32,8 @@
     "password": "password04",
     "organization": "State Government",
     "location": "Olympia",
-    "professions": "Financial Advisor",
-    "interests": "Family Medicine"
+    "profession": "Financial Advisor",
+    "interest": "Family Medicine"
   },
   {
     "username": "Edward V. Berard",
@@ -41,7 +41,7 @@
     "password": "password05",
     "organization": "Big Hospital",
     "location": "Seattle",
-    "professions": "Doctor",
-    "interests": "Family Medicine"
+    "profession": "Doctor",
+    "interest": "Family Medicine"
   }
 ]
