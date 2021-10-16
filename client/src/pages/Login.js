@@ -38,7 +38,6 @@ const Login = (props) => {
       password: '',
     });
   };
-
   return (
     <main className="flex-row justify-center ">
       <div className="col-12 col-lg-9">
