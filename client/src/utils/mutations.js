@@ -19,12 +19,22 @@ export const ADD_USER = gql`
       user {
         _id
         username
-        # email
-        # password
-        # location
-        # organization
-        # profession
-        # interest
+        email
+        password
+        location
+        organization
+        profession{
+          Lawyer
+          Doctor
+          Social Worker
+          Financial Advisor
+        },
+        interest{
+          Family Policy
+          Family Law
+          Family Medicine
+          Family Finance
+        }
       }
     }
   }
