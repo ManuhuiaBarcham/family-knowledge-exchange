@@ -55,7 +55,7 @@ const typeDefs = gql`
       interest: [ID]
     ): Auth
     login(email: String!, password: String!): Auth
-    changeInterest(interestOption: String!): Interest
+    changeInterest(interestOption: [ID]): Interest
     removeUser(userId: ID): User
   }
 `;

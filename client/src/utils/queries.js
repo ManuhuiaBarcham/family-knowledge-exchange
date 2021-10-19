@@ -1,60 +1,42 @@
 import { gql } from '@apollo/client';
-
+//We use this to query one user and all the atributes to his username. 
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
       _id
       username
       email
-      thoughts {
+      organization
+      location
+      interest {
         _id
-        thoughtText
-        createdAt
+        interestOption
+      },
+      profession {
+        _id
+        professionOption
       }
     }
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
+export const QUERY_INTERESTS = gql`
+  query getInterest {
+    interest {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
+      interestOption
     }
   }
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
+
+
+export const QUERY_PROFESSION = gql`
+  query Profession {
+    profession {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
-      }
+      professionOption
     }
   }
 `;
 
-export const QUERY_ME = gql`
-  query me {
-    me {
-      _id
-      username
-      email
-      thoughts {
-        _id
-        thoughtText
-        thoughtAuthor
-        createdAt
-      }
-    }
-  }
-`;
