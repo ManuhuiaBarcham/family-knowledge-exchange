@@ -1,3 +1,18 @@
+import React from "react";
+ const Contact = () => {
+     return (
+         <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}> 
+             <h1>Contact Us</h1>
+             <h3>Name: email</h3>
+             <h3>Name: email</h3>
+             <h3>Name: email</h3>
+             <h3>Name: email</h3>
+             <h3>Name: email</h3>
+             <h3><a href="https://github.com/ManuhuiaBarcham/family-knowledge-exchange">Github</a></h3>
+         </div>
+     )
+ }
+
 // import React from "react";
 
 // const Contact = () => {
@@ -40,4 +55,4 @@
     
 // };
 
-// export default Contact;
+export default Contact;
