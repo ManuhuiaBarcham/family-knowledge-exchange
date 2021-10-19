@@ -16,7 +16,8 @@ import Login from './pages/Login';
 import Header from './components/Header';
 import Navbars from './components/Navbar';
 import Footing from './components/Footer';
-// import Contact from './pages/Contactus';
+import Contact from './pages/Contactus';
+import Home from './pages/Home';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -51,12 +52,12 @@ function App() {
           
           <Navbars/>
           
-            {/* <Route  path="/" exact component={Home}>
+            {/* {<Route  path="/" exact component={Home}>
               <Home />
-            </Route> */}
-            {/* <Route exact path="/contact">
+            </Route>} */}
+            {<Route exact path="/contact">
               <Contact />
-            </Route> */}
+            </Route>}
             <Route exact path="/login">
               <Login />
             </Route>
