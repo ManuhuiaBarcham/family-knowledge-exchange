@@ -21,6 +21,15 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_INTERESTS = gql`
+  query getInterests {
+    interests {
+      _id
+      interestOption
+    }
+  }
+`;
+
+export const QUERY_INTEREST = gql`
   query getInterest {
     interest {
       _id
@@ -29,7 +38,14 @@ export const QUERY_INTERESTS = gql`
   }
 `;
 
-
+export const QUERY_PROFESSIONS = gql`
+  query Professions {
+    professions {
+      _id
+      professionOption
+    }
+  }
+`;
 
 export const QUERY_PROFESSION = gql`
   query Profession {

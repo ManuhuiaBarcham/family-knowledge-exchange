@@ -1,4 +1,5 @@
 import React from "react";
+
  const Contact = () => {
      return (
          <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}> 
@@ -9,6 +10,7 @@ import React from "react";
              <h3>Name: email</h3>
              <h3>Name: email</h3>
              <h3><a href="https://github.com/ManuhuiaBarcham/family-knowledge-exchange">Github</a></h3>
+
          </div>
      )
  }
