@@ -14,32 +14,21 @@ const Navbars = () => {
   return (
     <>
       <Nav>
-
-
-        <div class="dropdown">
-          <button class="dropbtn"><Bars /></button>
-          <div class="dropdown-content">
-            <a >
-              <NavLink to="/" activeStyle>
+        <div className="dropdown">
+          <button className="dropbtn"><Bars /></button>
+          <div className="dropdown-content">
+              <NavLink to="/">
                 Home
               </NavLink>
-            </a>
-            <a >
-              <NavLink to="/contact" activeStyle>
+              <NavLink to="/contact">
                 Contact Us
-              </NavLink></a>
-
-            <a >
+              </NavLink>
               <NavLink to="/login">
                 Login
               </NavLink>
-            </a>
-            <a >
               <NavLink to="/signup">
                 Signup
               </NavLink>
-            </a>
-            <a >
               <NavBtn>
                 {Auth.loggedIn() ? (
                   <>
@@ -52,29 +41,25 @@ const Navbars = () => {
                   </>
                 ) : (
                   <>
-                    <a >
                       <NavLink to="/login">
                         Login
-                      </NavLink></a>
-                    <a >
+                      </NavLink>
                       <NavLink to="/signup">
                         Signup
-                      </NavLink></a>
+                      </NavLink>
                   </>
                 )}
               </NavBtn>
-            </a>
-
           </div>
         </div>
 
 
         <NavMenu>
 
-          <NavLink to="/" activeStyle>
+          <NavLink to="/" >
             Home
           </NavLink>
-          <NavLink to="/contact" activeStyle>
+          <NavLink to="/contact" >
             Contact Us
           </NavLink>
           <NavBtn>

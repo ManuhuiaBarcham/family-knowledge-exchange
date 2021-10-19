@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
 
+import { ADD_USER } from '../utils/mutations';
+import AwesomeSelect from '../components/AwesomeSelect';
 import Auth from '../utils/auth';
+import {QUERY_PROFESSIONS, QUERY_INTERESTS} from '../utils/queries';
+import { useQuery, gql } from '@apollo/client';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -41,6 +44,31 @@ const Signup = () => {
     }
   };
 
+  const interestQueryReply = useQuery(QUERY_INTERESTS);
+  let interests = interestQueryReply.data?.interests || []; 
+  if  (interestQueryReply.data){
+    interests = interests.map(interest=> {
+      let newInterest = {
+        id: interest._id,
+        name: interest.interestOption
+      }
+      return newInterest;
+    });
+  }
+  
+
+  const professionsQueryReply = useQuery(QUERY_PROFESSIONS);
+  let professions = professionsQueryReply.data?.professions || [];
+  if (professionsQueryReply.data) {
+    professions = professions.map(profession => {
+      let newProfession = {
+        id: profession._id,
+        name: profession.professionOption
+      }
+      return newProfession;
+    });
+  }
+
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
@@ -53,8 +81,8 @@ const Signup = () => {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
+              <form >
+                <input onSubmit={handleFormSubmit}
                   className="form-input"
                   placeholder="Your username"
                   name="username"
@@ -94,37 +122,19 @@ const Signup = () => {
                   value={formState.location}
                   onChange={handleChange}
                 />
-                <select >
-                  <option
-                    className="form-input"
-                    placeholder="Profession"
-                    name="profession"
-                    type="profession"
-                    value={formState.profession}
-                    onChange={handleChange}
+          {professionsQueryReply.loading ? (
+            <div>Loading...</div>
+          ) : (
+            <AwesomeSelect name="Profession" options={professions}/> 
+          )}
+               
+                {interestQueryReply.loading ? (
+            <div>Loading...</div>
+          ) : (
+            <AwesomeSelect name="Interest" options={interests}/>
+          )}
+               
 
-                  />
-
-                  <option
-                    className="form-input"
-                    placeholder="Profession"
-                    name="profession"
-                    type="profession"
-                    value={formState.profession}
-                    onChange={handleChange}
-                  />
-                </select>
-                
-
-
-                <option
-                  className="form-input"
-                  placeholder="Interest"
-                  name="interest"
-                  type="interest"
-                  value={formState.interest}
-                  onChange={handleChange}
-                />
                 <button
                   className="btn btn-block btn-primary"
                   style={{ cursor: 'pointer' }}
