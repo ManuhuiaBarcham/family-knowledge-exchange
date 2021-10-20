@@ -11,14 +11,14 @@ class AwesomeSelect extends Component {
             ? true 
             : this.props.renderDefaultOption;
 
-    return <select name={this.props.name} id={this.props.name} className="form-input" placeholder={placeholder} >
+    return <select onChange={this.props.onChange} name={this.props.name.toLowerCase()} id={this.props.name} className="form-input" placeholder={placeholder} >
        {renderDefaultOption && (
         <option value="">{placeholder} </option>)
        }
        {componentOptions.map( ( opt ) => (
 					<option
                     key={opt.id}
-                    value={opt.name}
+                    value={opt.id}
                     >{opt.name}</option>
 				) )}
     </select>

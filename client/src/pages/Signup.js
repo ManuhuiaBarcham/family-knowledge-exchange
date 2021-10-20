@@ -15,29 +15,32 @@ const Signup = () => {
     email: '',
     password: '',
     organization:'',
-    location:'',
-    
+    location:''    
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+    console.log("formState as we send",formState)
+    var newFormState = Object.assign({},formState);
+    console.log("newFormState as we send", newFormState);
+    /* eslint-disable no-unused-expressions */
+    newFormState[name] = value
+    setFormState(newFormState);
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
 
+    const res = Object.assign({}, formState)
     try {
       const { data } = await addUser({
-        variables: { ...formState },
+        variables: res,
       });
-
+      console.log(data);
+      debugger;
       Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
@@ -81,8 +84,8 @@ const Signup = () => {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form >
-                <input onSubmit={handleFormSubmit}
+              <form onSubmit={handleFormSubmit} >
+                <input 
                   className="form-input"
                   placeholder="Your username"
                   name="username"
@@ -125,13 +128,13 @@ const Signup = () => {
           {professionsQueryReply.loading ? (
             <div>Loading...</div>
           ) : (
-            <AwesomeSelect name="Profession" options={professions}/> 
+            <AwesomeSelect onChange={handleChange} name="Profession" options={professions}/> 
           )}
                
                 {interestQueryReply.loading ? (
             <div>Loading...</div>
           ) : (
-            <AwesomeSelect name="Interest" options={interests}/>
+            <AwesomeSelect onChange={handleChange} name="Interest" options={interests}/>
           )}
                
 

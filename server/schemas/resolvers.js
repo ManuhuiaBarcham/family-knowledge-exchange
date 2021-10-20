@@ -40,15 +40,23 @@ const resolvers = {
         interest,
       }
     ) => {
-      const user = await User.create({
+      let userProf = await Profession.findOne({ _id: profession });
+      let userInter = await Interest.findOne({ _id: interest });
+      
+      let user = await User.create({
         username,
         email,
         password,
         organization,
         location,
-        profession,
-        interest,
+        profession: userProf?._id,
+        interest: userInter?._id
       });
+
+      user = user.toObject();
+      user.profession = userProf;
+      user.interest = userInter;
+
       const token = signToken(user);
       return { token, user };
     },
