@@ -9,7 +9,8 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build",
-    "swatch": "cd server && npm run watch"
+    "swatch": "cd server && npm run watch",
+    "swatchBoth": "concurrently \"cd server && npm run watch\" \"cd client && npm run build && npm run watch\""
   },
   "repository": {
     "type": "git",

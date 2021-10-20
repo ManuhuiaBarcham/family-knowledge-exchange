@@ -23,17 +23,13 @@ export const ADD_USER = gql`
         password
         location
         organization
-        profession{
-          Lawyer
-          Doctor
-          Social Worker
-          Financial Advisor
-        },
-        interest{
-          Family Policy
-          Family Law
-          Family Medicine
-          Family Finance
+        interest {
+          _id
+          interestOption
+        }
+        profession {
+          _id
+          professionOption
         }
       }
     }
