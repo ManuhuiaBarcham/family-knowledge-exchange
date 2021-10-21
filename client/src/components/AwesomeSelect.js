@@ -10,8 +10,8 @@ class AwesomeSelect extends Component {
         this.props.renderDefaultOption == null 
             ? true 
             : this.props.renderDefaultOption;
-
-    return <select onChange={this.props.onChange} name={this.props.name.toLowerCase()} id={this.props.name} className="form-input" placeholder={placeholder} >
+    const classNameValue = this.props.className ? this.props.className : "form-input";
+    return <select onChange={this.props.onChange} name={this.props.name.toLowerCase()} id={this.props.name} className={classNameValue} placeholder={placeholder} >
        {renderDefaultOption && (
         <option value="">{placeholder} </option>)
        }
