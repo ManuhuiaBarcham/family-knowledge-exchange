@@ -40,9 +40,12 @@ const typeDefs = gql`
     user: User
   }
   type Query {
+    users: [User]
+    user(username: String!): User
     users(filter: userFilter): [User!]
     interests: [Interest!]
     professions: [Profession!]
+    me: User
   }
   type Mutation {
     addUser(

@@ -18,6 +18,8 @@ import Navbars from './components/Navbar';
 import Footing from './components/Footer';
 import Contact from './pages/Contactus';
 import Home from './pages/Home';
+import Search from './pages/Search';
+import Profile from './pages/Profile';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -46,11 +48,10 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      
       <Router>
         <Header />
-        <Navbars/>
-        
+        <Navbars />
+
         <Switch>
           <Route exact path="/">
             <Home />
@@ -58,16 +59,21 @@ function App() {
           <Route exact path="/contact">
             <Contact />
           </Route>
+          <Route exact path="/search">
+            <Search />
+          </Route>
           <Route exact path="/login">
             <Login />
+          </Route>
+          <Route exact path="/profile">
+            <Profile />
           </Route>
           <Route exact path="/signup">
             <Signup />
           </Route>
         </Switch>
-          
+
         <Footing />
-       
       </Router>
     </ApolloProvider>
   );
