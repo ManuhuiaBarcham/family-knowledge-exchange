@@ -20,8 +20,28 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_USERS = gql`
+  query users($filter: userFilter) {
+    users(filter: $filter) {
+      _id
+      username
+      email
+      organization
+      location
+      interest {
+        _id
+        interestOption
+      }
+      profession {
+        _id
+        professionOption
+      }
+    }
+  }
+`;
+
 export const QUERY_INTERESTS = gql`
-  query getInterests {
+  query Interests {
     interests {
       _id
       interestOption
@@ -29,27 +49,9 @@ export const QUERY_INTERESTS = gql`
   }
 `;
 
-// export const QUERY_INTEREST = gql`
-//   query getInterest {
-//     interest {
-//       _id
-//       interestOption
-//     }
-//   }
-// `;
-
-// export const QUERY_PROFESSION = gql`
-//   query Professions {
-//     professions {
-//       _id
-//       professionOption
-//     }
-//   }
-// `;
-
 export const QUERY_PROFESSIONS = gql`
-  query Profession {
-    profession {
+  query Professions {
+    professions {
       _id
       professionOption
     }
@@ -57,8 +59,8 @@ export const QUERY_PROFESSIONS = gql`
 `;
 
 export const QUERY_ME = gql`
-  query user($username: String!) {
-    user(username: $username) {
+  query me {
+    me {
       _id
       username
       email

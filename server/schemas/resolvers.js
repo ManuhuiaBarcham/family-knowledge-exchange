@@ -5,6 +5,30 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
+    user: async (parent, { username }) => {
+  
+      if (username == null || username == ''){
+        return null;
+      }
+      // const params = username? { username } : {};
+      let tmp = await User.find({username})
+        .populate('interest')
+        .populate('profession');
+
+      return tmp[0];
+    },
+    me: async (parent, args, context) => {
+      if (context.user) {
+        let usr = await User.findOne({ _id: context.user._id })
+            .populate('interest')
+            .populate('profession');
+
+        console.log(usr);
+        return usr;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
     users: async (parent, { filter }) => {
       console.log('parent:', filter.parent);
       console.log('interest:', filter.interest);
@@ -14,7 +38,7 @@ const resolvers = {
       const params =
         filter.username || filter.interest || filter.profession ? filter : {};
       // const params = username? { username } : {};
-      let tmp = await User.find(filter)
+      let tmp = await User.find(params)
         .populate('interest')
         .populate('profession');
       return tmp;
