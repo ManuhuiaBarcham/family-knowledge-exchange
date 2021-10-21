@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-//We use this to query one user and all the atributes to his username. 
+//We use this to query one user and all the atributes to his username.
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
@@ -11,7 +11,27 @@ export const QUERY_USER = gql`
       interest {
         _id
         interestOption
-      },
+      }
+      profession {
+        _id
+        professionOption
+      }
+    }
+  }
+`;
+
+export const QUERY_USERS = gql`
+  query users($filter: userFilter) {
+    users(filter: $filter) {
+      _id
+      username
+      email
+      organization
+      location
+      interest {
+        _id
+        interestOption
+      }
       profession {
         _id
         professionOption
@@ -21,17 +41,8 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_INTERESTS = gql`
-  query getInterests {
+  query Interests {
     interests {
-      _id
-      interestOption
-    }
-  }
-`;
-
-export const QUERY_INTEREST = gql`
-  query getInterest {
-    interest {
       _id
       interestOption
     }
@@ -47,12 +58,22 @@ export const QUERY_PROFESSIONS = gql`
   }
 `;
 
-export const QUERY_PROFESSION = gql`
-  query Profession {
-    profession {
+export const QUERY_ME = gql`
+  query me {
+    me {
       _id
-      professionOption
+      username
+      email
+      organization
+      location
+      interest {
+        _id
+        interestOption
+      }
+      profession {
+        _id
+        professionOption
+      }
     }
   }
 `;
-

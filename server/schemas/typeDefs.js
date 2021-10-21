@@ -40,6 +40,9 @@ const typeDefs = gql`
     user: User
   }
   type Query {
+    me: User
+    # Bad idea to use username here as it might be not unique for the user either _id or email.
+    user(username: String!): User
     users(filter: userFilter): [User!]
     interests: [Interest!]
     professions: [Profession!]
