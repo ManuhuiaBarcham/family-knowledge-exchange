@@ -7,12 +7,14 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 
 // import Profile from './pages/Profile';
+import GoBack from './components/GoBack';
 import Header from './components/Header';
 import Navbars from './components/Navbar';
 import Footing from './components/Footer';
@@ -51,29 +53,35 @@ function App() {
       <Router>
         <Header />
         <Navbars />
-
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/contact">
-            <Contact />
-          </Route>
-          <Route exact path="/search">
-            <Search />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/profile">
-            <Profile />
-          </Route>
-          <Route exact path="/signup">
-            <Signup />
-          </Route>
-        </Switch>
-
+        <br />
+        <main className="container">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
+            </Route>
+            <Route exact path="/search">
+              <Search />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/profile/:username?">
+              <Profile />
+            </Route>
+            <Route path="/me">
+              <Profile />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
+            </Route>
+          </Switch>
+          <GoBack />
+        </main>
         <Footing />
+
       </Router>
     </ApolloProvider>
   );
