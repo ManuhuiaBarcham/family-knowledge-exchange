@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
+import { Link } from 'react-router-dom';
 import AwesomeSelect from '../components/AwesomeSelect';
-
+import img3 from '../components/Assets/15-153268_s.jpg';
 import { QUERY_USER, QUERY_USERS, QUERY_ME, QUERY_INTERESTS } from '../utils/queries';
 import UserCard from '../components/UserCard';
 import './Profile.css';
@@ -60,10 +60,33 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
+      <div class="col-md-12" style={{Width: "200%", height:"150%"}}>
+        <br/>
+        <br/>
+      <div class="row ">
+        <div class="col-md-6">
+          <img src={img3} class="img-fluid rounded-start" alt="..."/>
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+          
+            <p style={{justifyContent: "center",  marginLeft:"50px", fontSize:"30px", fontWeight:"bold"}}>
+                Success! You may now head back to the homepage.{' '}
+                <br/>
+                <br/>
+                <Link to="/"><button class="btn btn-primary d-grid gap-2 col-8 mx-auto"type="button" style={{justifyContent: "center",  marginLeft:"50px", fontSize:"30px", fontWeight:"bold"}}>Homepage</button></Link>
+              </p>
+              <br/>
+              
+            <p class="card-text" style={{marginLeft:"50px", fontSize:"30px", fontWeight:"bold"}} >
+
+              Thankyou for joing the Family Knowledge Exchange Network! Hope you have found a comunity of profetionals. </p>
+            <br/>
+          </div>
+        </div>
+      </div>
+    </div>
+     
     );
   }
 
