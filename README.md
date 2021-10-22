@@ -16,7 +16,8 @@ SO THAT we can work share knowledge that can better help us in supporting famili
 
 ```
 ## Installation 
-
+- Download it through Github
+- Run npm i or (npm install), make sure to download the jason package and inquirer.
 
 ## Usage 
 1. use ```git clone ``` to clone repo sources
