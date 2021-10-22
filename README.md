@@ -1,6 +1,8 @@
 # family-knowledge-exchange
 An application that links together different individuals and stakeholder groups interested in supporting families, allowing them to connect and share knowledge in their respectful fields. 
 
+[Github repo <img src="./assets/octo.png" width="" height="30" alt="github icon"/>](https://github.com/ManuhuiaBarcham/family-knowledge-exchange.git)
+
 ## About 
 A service that allows the user to sign in. Providing them with the option to list their organization and field of interest then connects the user with individuals and stakeholders supporting families in that field.
 
