@@ -1,9 +1,6 @@
 .dropbtn {
   display: none;
-  color: #fff;
-    background-color: #fff;
-    color: white;
-    padding: 16px;
+  opacity: .2rem;
     font-size: 35px;
     border: none;
     cursor: pointer;

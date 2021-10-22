@@ -80,7 +80,7 @@ const Profile = () => {
               
             <p class="card-text" style={{marginLeft:"50px", fontSize:"30px", fontWeight:"bold"}} >
 
-              Thankyou for joing the Family Knowledge Exchange Network! Hope you have found a comunity of profetionals. </p>
+              Thankyou for joining the Family Knowledge Exchange Network! We hope you have found a community of professionals. </p>
             <br/>
           </div>
         </div>
