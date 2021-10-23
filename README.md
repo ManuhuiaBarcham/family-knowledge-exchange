@@ -8,7 +8,7 @@ An application that links together different individuals and stakeholder groups 
 
 ## About
 
-A service that allows the user to sign in. Providing them with the option to list their organization and field of interest then connects the user with individuals and stakeholders supporting families in that field.
+A service that allows the user to sign in, providing them with the option to list their organization and field of interest then connects the user with individuals and stakeholders supporting families in that field.
 
 <img src="./assets/responsivedes.PNG">
 
@@ -59,7 +59,7 @@ SO THAT we can work share knowledge that can better help us in supporting famili
 
 ## From developers
 
-Made by [Manuhuia](https://github.com/ManuhuiaBarcham),[Consolata](https://github.com/Conso97),[Mariia](https://github.com/MaryVPie),[Kelebet](https://github.com/kelebetengida),[Megan](https://github.com/eksem95)
+Made by [Manuhuia](https://github.com/ManuhuiaBarcham), [Consolata](https://github.com/Conso97), [Mariia](https://github.com/MaryVPie), [Kelebet](https://github.com/kelebetengida), and [Megan](https://github.com/eksem95).
 
 ## More from us
 
