@@ -60,32 +60,10 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-      <div class="col-md-12" style={{Width: "200%", height:"150%"}}>
-        <br/>
-        <br/>
-      <div class="row ">
-        <div class="col-md-6">
-          <img src={img3} class="img-fluid rounded-start" alt="..."/>
-        </div>
-        <div class="col-md-6">
-          <div class="card-body">
-          
-            <p style={{justifyContent: "center",  marginLeft:"50px", fontSize:"30px", fontWeight:"bold"}}>
-                Success! You may now head back to the homepage.{' '}
-                <br/>
-                <br/>
-                <Link to="/"><button class="btn btn-primary d-grid gap-2 col-8 mx-auto"type="button" style={{justifyContent: "center",  marginLeft:"50px", fontSize:"30px", fontWeight:"bold"}}>Homepage</button></Link>
-              </p>
-              <br/>
-              
-            <p class="card-text" style={{marginLeft:"50px", fontSize:"30px", fontWeight:"bold"}} >
-
-              Thankyou for joining the Family Knowledge Exchange Network! We hope you have found a community of professionals. </p>
-            <br/>
-          </div>
-        </div>
-      </div>
-    </div>
+      <h4>
+        You need to be logged in to see this. Use the navigation links above to
+        sign up or log in!
+      </h4>
      
     );
   }
