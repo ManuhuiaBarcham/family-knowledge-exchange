@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
+import { Link } from 'react-router-dom';
 import AwesomeSelect from '../components/AwesomeSelect';
-
+import img3 from '../components/Assets/15-153268_s.jpg';
 import { QUERY_USER, QUERY_USERS, QUERY_ME, QUERY_INTERESTS } from '../utils/queries';
 import UserCard from '../components/UserCard';
 import './Profile.css';
@@ -64,6 +64,7 @@ const Profile = () => {
         You need to be logged in to see this. Use the navigation links above to
         sign up or log in!
       </h4>
+     
     );
   }
 
