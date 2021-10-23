@@ -61,9 +61,12 @@ const Profile = () => {
   if (!user?.username) {
     return (
       <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
+        You have successfully logged out. If you want to view your profile or
+        make connections with others you will need to log back in.
+        <br/>
+        <img src={img3} alt="" style={{width:"75%", alignItems:"center"}}/> 
       </h4>
+      
      
     );
   }
