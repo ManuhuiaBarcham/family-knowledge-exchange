@@ -39,10 +39,11 @@ SO THAT we can work share knowledge that can better help us in supporting famili
 
 - Express.js
 - React.js
-- Bootstrap Framework
-- Build in HTML5 validation
+- React-Bootstrap Styling Framework
+- Built in HTML5 validation
 - Node.js
 - MongoDB
+- Apollo-Server-Express
 - GraphQL
 
 ## How can I contribute or help?
